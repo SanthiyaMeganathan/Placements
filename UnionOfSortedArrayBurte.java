@@ -39,6 +39,16 @@ public class UnionOfSortedArrayBurte {
             set.add(arr2[i]);
         }
 
+        System.out.println("Printing the elements in set");
+
+        
+
+        for (int i : set) {
+            System.out.print(i + " ");
+        }
+
+
+
         
 
         int length = set.size();
