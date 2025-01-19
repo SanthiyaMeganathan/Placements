@@ -11,18 +11,26 @@ public class PatternSeven {
             for (int j = 1; j <= n - i; j++) {
                 System.out.print(" ");
             }
-            for (int j = 1; j <= ((i*2)-1); j++) {
+            for (int j = 1; j <= ((i * 2) - 1); j++) {
                 System.out.print("*");
             }
             for (int j = 1; j <= n - i; j++) {
                 System.out.print("");
             }
-              System.out.println("");
+            System.out.println("");
 
         }
 
-
-
     }
-    
+    /*
+ * Enter the number of rows: n :  
+5
+    *
+   ***
+  *****
+ *******
+*********
+ */
+
+
 }
