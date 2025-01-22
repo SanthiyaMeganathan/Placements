@@ -47,14 +47,27 @@ public class PatternTwentyOne {
                 System.out.print(" ");
             }
             //star
-             for (int j = 1; j <= n - i; j++) {
+            for (int j = 1; j <= n - i; j++) {
                 System.out.print("*");
             }
-            
 
             System.out.println();
         }
-        
+
     }
+    /*
+     * enter the number of rows:
+5
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *
+PS C:\Users\
+     */
     
 }
