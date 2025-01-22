@@ -26,7 +26,7 @@ public class RemoveDuplicates {
             if (arr[i] != arr[j]) {
                 arr[i + 1] = arr[j];
                 i++;
-                count++;
+              
             }
         }
         

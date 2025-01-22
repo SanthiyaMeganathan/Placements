@@ -24,9 +24,7 @@ public class NumberOccurOnceBrute {
             for (j = 0; j < n; j++) {
                 if (arr[j] == num) {
                     count++;
-                } else {
-                    count = 0;
-                }
+                } 
             }
              if (count == 1) {
                  System.out.println("The number that appred only once is " + arr[j]);

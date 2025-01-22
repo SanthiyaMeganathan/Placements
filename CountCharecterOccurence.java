@@ -7,7 +7,6 @@ public class CountCharecterOccurence {
         String name = "malayalam";
         
         HashMap<Character, Integer> map = new HashMap<>();
-        [m]
 
         for (char ch : name.toCharArray()) {
             if (map.containsKey(ch)) {

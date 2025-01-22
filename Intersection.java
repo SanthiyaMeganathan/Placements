@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+//Wc:Tc: O(N1+n2)
+//sc:O(1) no extra space
+//optimal
+
 public class Intersection {
     public static void main(String[] args) {
         System.out.println("Enter the Size of array 1");

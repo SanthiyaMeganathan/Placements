@@ -25,7 +25,20 @@ public class PatternEleven{
             }
             System.out.println();
         }
-        
+       
+        /**
+         * Enter the value n: 
+5
+*
+**
+***
+****
+*****
+****
+***
+**
+*
+         */
     }
     
 

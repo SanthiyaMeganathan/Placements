@@ -20,6 +20,3 @@ public class Palindrome {
 }
 
 
-if(a==b){
-    
-}

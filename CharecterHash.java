@@ -2,36 +2,32 @@ import java.util.Scanner;
 
 public class CharecterHash {
     public static void main(String[] args) {
-        
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter  the string that contains only smaller case letters");
+        System.out.println("Enter the string that contains only lowercase letters:");
         String str = input.next();
-        System.out.println(str);
+        System.out.println("Input string: " + str);
 
         int length_str = str.length();
 
-        char[] str_chr = new char[length_str];
-
+        // Initialize the hash array for character frequency
         int[] hash_arr = new int[26];
 
-        System.out.println(hash_arr[25]);
-
-        for (int i = 0; i < 26; i++) {
-            hash_arr[i] = 0;
-
-        }
-
+        // Populate the hash array
         for (int i = 0; i < length_str; i++) {
-
-            hash_arr[str_chr[i] - 'a']++;
-
+            char ch = str.charAt(i);
+            if (ch >= 'a' && ch <= 'z') {
+                hash_arr[ch - 'a']++;
+            } else {
+                System.out.println("Invalid input: String contains non-lowercase letters.");
+                return;
+            }
         }
-        
-        
 
-        
-
-        
+        // Print the frequencies
+        for (int i = 0; i < 26; i++) {
+            if (hash_arr[i] > 0) {
+                System.out.println("Frequency of character '" + (char) (i + 'a') + "': " + hash_arr[i]);
+            }
+        }
     }
-    
 }

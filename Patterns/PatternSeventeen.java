@@ -14,16 +14,24 @@ public class PatternSeventeen {
     static void printpatterninletter(int n) {
         char letter = 'A';
         for (int i = 0; i < n; i++) {
-            
-            
+
             for (char j = 0; j <= i; j++) {
                 System.out.print(letter);
 
             }
-            
+
             System.out.println();
             letter++;
         }
+        /*
+         * Enter the number to print the pattern
+5
+A
+BB
+CCC
+DDDD
+EEEEE
+         */
         
     }
 }

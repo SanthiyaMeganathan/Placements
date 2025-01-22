@@ -22,6 +22,8 @@ public class OptimalAppearOnce {
 
         }
 
+        input.close();
+
         System.out.println("The only number that appears once is"+xor);
     }
     

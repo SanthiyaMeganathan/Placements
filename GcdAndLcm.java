@@ -34,9 +34,11 @@ public class GcdAndLcm {
        }
 
        int gcd = 0;
+
+       int length = divisors.lastIndexof() ;      
       
 
-       for(int num: divisors){
+       for(int i =0; i<= divisors.length){
         if(num>gcd){
             gcd=num;
         }
