@@ -47,6 +47,26 @@ public class LongestSubarrayKpositiveBrute {
 
                 }
             }
+
+            /*
+            
+            output:
+            enter the number of element in array
+8
+Enter the elements of array, every number should be positive:  
+3
+2
+1
+1
+1
+2
+1
+2
+Enter the sumation of subarray from thearray that you want 
+3
+3
+             * 
+             */
         }
         System.out.println(length);
 
