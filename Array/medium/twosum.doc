@@ -1,0 +1,138 @@
+
+The 2-Sum Problem: A Story-Based Explanation
+Imagine you are a shopkeeper 🏪 who sells different types of chocolates 🍫.
+Each chocolate has a price (an array of numbers).
+
+One day, a customer walks in and says:
+💬 "I have ₹K. Can you give me two chocolates whose prices add up to exactly ₹K?"
+
+Your job? Find two chocolates in your shop whose total price matches K.
+
+Approach 1️⃣: Brute Force – The Exhausted Shopkeeper 😵‍💫
+💡 How does the shopkeeper think?
+He is not very smart. He checks every possible pair of chocolates to see if their total price matches K.
+
+🏹 How does he do it?
+
+He picks the first chocolate 🍫 and checks it with every other chocolate 🍫🍫.
+If their total price == K, he gives them to the customer. ✅
+Otherwise, he repeats this for every chocolate in the shop.
+📜 Pseudo Code
+
+java
+Copy
+Edit
+class Solution {
+    public int[] twoSum(int[] prices, int K) {
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                if (prices[i] + prices[j] == K) { // Found a match!
+                    return new int[]{i, j}; // Return the indices
+                }
+            }
+        }
+        return new int[]{-1, -1}; // No match found
+    }
+}
+⏳ Time Complexity: O(N²) → Checks every pair (too slow for big shops).
+🛑 Why is it bad?
+
+Too slow! The shopkeeper takes forever checking all pairs. ⏳
+He repeats the same calculations again and again.
+Approach 2️⃣: Better Approach (HashMap) – The Smart Shopkeeper 😎
+💡 How does he think now?
+The shopkeeper is now smart! He remembers chocolates he has already seen using a notebook 📒 (HashMap).
+
+🏹 How does he do it?
+
+He checks if the required chocolate price (K - current price) exists in his notebook 📒.
+If yes, he found a pair! ✅
+Otherwise, he writes down the price of each chocolate as he goes.
+📜 Pseudo Code
+
+java
+Copy
+Edit
+import java.util.*;
+
+class Solution {
+    public int[] twoSum(int[] prices, int K) {
+        Map<Integer, Integer> map = new HashMap<>(); // Store {price, index}
+
+        for (int i = 0; i < prices.length; i++) {
+            int remaining = K - prices[i]; // The price we need to find
+
+            if (map.containsKey(remaining)) { // Check if the remaining price exists
+                return new int[]{map.get(remaining), i}; // Return indices
+            }
+
+            map.put(prices[i], i); // Store the price and index
+        }
+        return new int[]{-1, -1}; // No match found
+    }
+}
+⏳ Time Complexity: O(N) → Only one pass through the chocolates.
+📦 Space Complexity: O(N) → Uses extra space for the notebook (HashMap).
+
+✅ Why is this better?
+
+The shopkeeper remembers what he has seen (HashMap 📒), so he doesn't check everything again.
+He finds the answer in one pass (FAST 🚀).
+Approach 3️⃣: Optimal Approach (Sorting + Two-Pointer) – The Genius Shopkeeper 🎓
+💡 How does the genius shopkeeper think?
+He sorts the chocolates by price first! Then, he uses two people (pointers 👈👉) to find the correct pair.
+
+🏹 How does he do it?
+1️⃣ First, he sorts all chocolates by price (Sorting 🛒).
+2️⃣ He starts with two people:
+
+One at the cheapest chocolate 🍫 (left pointer).
+One at the most expensive chocolate 🍫 (right pointer).
+3️⃣ He checks their total price:
+If sum > K → Too expensive! Move the right pointer left.
+If sum < K → Too cheap! Move the left pointer right.
+If sum == K → Found the answer! ✅
+📜 Pseudo Code
+
+java
+Copy
+Edit
+import java.util.*;
+
+class Solution {
+    public int[] twoSum(int[] prices, int K) {
+        Arrays.sort(prices); // Step 1: Sort the array
+        int left = 0, right = prices.length - 1; // Step 2: Two pointers
+
+        while (left < right) {
+            int sum = prices[left] + prices[right];
+
+            if (sum == K) { // Step 3: Found the pair!
+                return new int[]{left, right};
+            } else if (sum < K) {
+                left++; // Move left pointer (increase sum)
+            } else {
+                right--; // Move right pointer (decrease sum)
+            }
+        }
+        return new int[]{-1, -1}; // No match found
+    }
+}
+⏳ Time Complexity: O(N log N) → Because of sorting.
+📦 Space Complexity: O(1) → No extra storage needed.
+
+✅ Why is this even better?
+
+If sorting is already done, it's the fastest!
+Does not use extra memory (no HashMap needed).
+Comparison of All Approaches
+Approach	Time Complexity	Space Complexity	Best When?
+Brute Force	O(N²)	O(1)	For very small arrays (≤ 100 elements)
+HashMap (Better)	O(N)	O(N)	For large arrays when space is not a problem
+Sorting + Two Pointers (Optimal)	O(N log N)	O(1)	When sorting is allowed & extra space is limited
+Final Thoughts
+📝 If array is small, Brute Force is fine.
+📝 If array is large, use HashMap for speed.
+📝 If sorting is okay, Two-Pointer is best because it uses no extra space.
+
+🚀 Genius Shopkeepers use HashMap or Two-Pointer techniques!
